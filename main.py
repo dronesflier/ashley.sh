@@ -138,6 +138,7 @@ we are very thankful you decided to trust a random script from the internet. (yo
 modes:
 -e: chat with a smart* ashley!
 -j: have ashley complain about electron apps running on your system
+-tinad: no, it isn't your first day.
 -h: show this help message
 """
     print(help_text)
@@ -148,7 +149,6 @@ def generate_random_mac():
     return ":".join(f"{random.randint(0, 255):02x}" for _ in range(6))
 
 def age():
-    # append a random mac address to this script at the bottom or in a random line
     with open(__file__, 'a') as f:
         f.write(f'\n# WE WILL NOT MISS. OUR. FUTURE. {int((119674 - 1970) * 365.25 * 24 * 3600 - time.time())}')
 
@@ -254,3 +254,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# WE WILL NOT MISS. OUR. FUTURE. 3712692037801

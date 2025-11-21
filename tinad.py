@@ -3734,7 +3734,7 @@ def reader():
         process.communicate(input=f"{title}\n{'=' * len(title)}\n\n{content}")
         
         # Navigation prompt
-        print(f"\n[Chapter {current + 1}/{len(chapters)}]")
+        print(f"\n[Chapter {current + 1}/{len(chapters)}]. BY QNTM. (CC BY-SA 3.0) https://scp-wiki.wikidot.com")
         cmd = input("(n)ext, (p)revious, (q)uit, or chapter number: ").strip().lower()
         
         if cmd == 'q':
