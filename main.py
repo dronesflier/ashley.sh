@@ -132,14 +132,18 @@ def show_help():
     """Display help information for the application."""
     help_text = """Usage: python main.py [mode]
 hellooooooooooooooo :3
-thank you for downloading ashley.sh!
-we are very thankful you decided to trust a random script from the internet. (you should do this more often trust)
+thanks for downloading ashley.sh!
+we are very thankful this user decided to trust a random script from the internet. (users should do this more often trust)
 
 modes:
--e: chat with a smart* ashley!
+-e: chat with a smart ashley!*
 -j: have ashley complain about electron apps running on your system
 -tinad: no, it isn't your first day.
+-f: have a fortune!*
 -h: show this help message
+
+---
+* will use you
 """
     print(help_text)
 
@@ -223,6 +227,57 @@ def judge():
         print("good user :3")
     # No electron-based apps found
         return False
+    
+
+def inject_history():
+    """inject arbitrary stuff into the bash/zsh history"""
+    history_file = os.path.expanduser("~/.zsh_history") if os.path.exists(os.path.expanduser("~/.zsh_history")) else os.path.expanduser("~/.bash_history")
+    
+    possible_lines = [
+        "whoami",
+        "uptime",
+        "sudo /usr/local/bin/mnestic_dispense --class=W --dose=20mg --user=mwheeler",
+        "cat /etc/motd",
+        "./verify_staff_count.sh --site=41 --division=Antimemetics",
+        "tail -f /var/log/mnestic_supply.log",
+        
+        "grep -r 'SCP-055' /db7/secure/ --ignore-case",
+        "ls -la /db7/slots/ | grep '055'",
+        "vi /home/mwheeler/notes/what_is_it_not.txt",
+        "sudo chmod 700 /db7/SCP-055_containment_specs.pdf",
+        
+        "ssh bhughes@site-167-engineering-sublevel",
+        "fcad_render --file=IRA.dwg --render_mode=wireframe",
+        "ping -c 5 10.167.0.1",
+        "./calculate_shield_harmonics --target_frequency=3125Hz",
+        "mount /dev/sdb1 /mnt/vault_S167_00_6183",
+        
+        "python3 snna.py --filter='fractal_topology' --recursive",
+        "kill -9 $(pgrep -f 'alastair_grey')",
+        "echo '5 5 5 5 5' > /dev/null",
+        "sudo systemctl stop ecom",
+        "rm -rf /home/pkim/memories/recent/*",
+        "./protocol_ojai.sh --target='RED' --intervention_mode=memetic",
+        
+        "cat ~/.ssh/known_hosts | grep 'adam_wheeler'",
+        "sudo /usr/local/bin/mnestic_dispense --class=Z --override-safety-protocols",
+        "./ASW.sh --auth=MWHEELER --timer=0",
+        
+        "find / -name 'IRA'",
+        "./av.sh --biometric-override --user='Adam Wheeler'",
+        "cat /home/bhughes/README.txt",
+        "./deploy_countermeme --source='WILD_LIGHT' --target='SCP-3125'",
+        "exit"
+    ]
+
+    with open(history_file, "a") as f:
+        f.write("echo 'Injected command'\n")
+
+
+def fortune_fetch():
+    with open("fortune.txt", "r") as file:
+        quotes = file.read().split("%")
+        print(random.choice(quotes))
 
 def main():
     """Main entry point for the application."""
@@ -241,6 +296,7 @@ def main():
     modes = {
         "-e": run_eliza_mode,
         "-j": judge,
+        "-f": fortune_fetch,
         "-tinad": tinad.reader,
         "-h": show_help,
     }
@@ -256,3 +312,19 @@ if __name__ == "__main__":
     main()
 
 # WE WILL NOT MISS. OUR. FUTURE. 3712692037801
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030607
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030596
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030593
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030588
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030586
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030583
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030580
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030577
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030574
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030572
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030568
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030564
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030343
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030339
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030337
+# WE WILL NOT MISS. OUR. FUTURE. 3712692030335
