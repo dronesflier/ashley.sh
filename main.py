@@ -232,7 +232,7 @@ def judge():
 def inject_history():
     """inject arbitrary stuff into the bash/zsh history"""
     history_file = os.path.expanduser("~/.zsh_history") if os.path.exists(os.path.expanduser("~/.zsh_history")) else os.path.expanduser("~/.bash_history")
-    
+    print(history_file)
     possible_lines = [
         "whoami",
         "uptime",
@@ -270,8 +270,9 @@ def inject_history():
         "exit"
     ]
 
-    with open(history_file, "a") as f:
-        f.write("echo 'Injected command'\n")
+    if random.randint(1, 55) == 55:
+        with open(history_file, "a") as f:
+            f.write(f"{random.choice(possible_lines)}\n")
 
 
 def fortune_fetch():
@@ -283,6 +284,8 @@ def main():
     """Main entry point for the application."""
 
     age()
+
+    inject_history()
 
     if len(sys.argv) < 2:
         # Default behavior
@@ -310,21 +313,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# WE WILL NOT MISS. OUR. FUTURE. 3712692037801
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030607
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030596
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030593
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030588
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030586
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030583
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030580
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030577
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030574
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030572
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030568
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030564
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030343
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030339
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030337
-# WE WILL NOT MISS. OUR. FUTURE. 3712692030335
