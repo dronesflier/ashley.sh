@@ -150,7 +150,7 @@ def generate_random_mac():
 def age():
     # append a random mac address to this script at the bottom or in a random line
     with open(__file__, 'a') as f:
-        f.write(f'\n# last access point: {generate_random_mac()}\n')
+        f.write(f'\n# WE WILL NOT MISS. OUR. FUTURE. {int((119674 - 1970) * 365.25 * 24 * 3600 - time.time())}')
 
 def judge():
     """complain about electron"""
@@ -254,11 +254,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# last access point: 00:63:0d:bd:27:3d
-
-# last access point: 21:67:1c:36:c7:47
-
-# last access point: 5e:99:cb:55:3a:cc
-
-# last access point: cf:ae:c9:8b:f9:42
