@@ -24,7 +24,8 @@ jobs:
         pip install pyinstaller
         
     - name: Build binary
-      run: python3 pyinstaller_build.py
+      run: |
+        pyinstaller --onefile --name ashley --add-data "doctor.txt:." --add-data "fortune.txt:." --add-data "eliza.py:." --add-data "tinad.py:." --hidden-import eliza --hidden-import tinad main.py
       
     - name: Create Release
       uses: softprops/action-gh-release@v1
