@@ -1,0 +1,35 @@
+name: Build and Release Ashley.sh Binary
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        
+    - name: Build binary
+      run: python3 pyinstaller_build.py
+      
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/ashley
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
